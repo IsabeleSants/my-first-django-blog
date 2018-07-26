@@ -1,22 +1,21 @@
 <html>
+
 	<head>
 		<title>Isa's Django Girls Blog</title>
 	</head>
+
 	<body>
 		<div>
 			<h1><a href="">Isa's Django Girls Blog</a></h1>
 		</div>
 
-		<div>
-			<p>published: 26.07.2018, 14:19</p>
-			<h2><a href="">My First Post</a></h2>
-			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-		</div>
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
 
-		<div>
-			<p>published: 26.07.2018, 14:21</p>
-			<h2><a href="">My Second Post</a></h2>
-			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-		</div>
 	</body>
 </html>
